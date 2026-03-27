@@ -144,6 +144,8 @@
 
 ;;; Org Mode
 
+(setq org-agenda-files '("~/org/"))
+
 (use-package org-recur
   :hook ((org-mode        . org-recur-mode)
          (org-agenda-mode . org-recur-agenda-mode))
@@ -350,8 +352,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(org-agenda-files
-   '("C:\\Users\\klooper\\OneDrive - JANUS DEVELOPMENTAL SERVICES, INC\\Documents\\Org\\"))
  '(org-safe-remote-resources '("\\`https://fniessen\\.github\\.io\\(?:/\\|\\'\\)"))
  '(package-selected-packages nil)
  '(warning-suppress-log-types
