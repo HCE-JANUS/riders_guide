@@ -336,6 +336,13 @@
 
 (global-set-key (kbd "C-c a") 'my/claude)
 
+;;; Machine-local overrides (not committed)
+;; Create ~/.emacs.d/local.el on each machine to set paths and other
+;; machine-specific settings (org-agenda-files, magit directories, etc.)
+(let ((local (expand-file-name "local.el" user-emacs-directory)))
+  (when (file-exists-p local)
+    (load local)))
+
 ;;; Customize (managed by Emacs — do not edit manually)
 
 (custom-set-variables

@@ -1,2 +1,5 @@
 # Emacs backup files
 *~
+
+# Machine-local Emacs config (not committed)
+dotfiles/local.el
