@@ -30,11 +30,13 @@ jobs:
             --eval "(setq org-safe-remote-resources '(\"https://fniessen\\.github\\.io/\"))" \
             --eval "(find-file \"Riders guide draft final kdl.org\")" \
             --eval "(org-html-export-to-html nil)"
+          mv "Riders guide draft final kdl.html" index.html
 
       - name: Commit and push HTML
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add "Riders guide draft final kdl.html"
+          git rm --cached "Riders guide draft final kdl.html" 2>/dev/null || true
+          git add index.html
           git diff --cached --quiet || git commit -m "Auto-export: update HTML from Org source"
           git push
