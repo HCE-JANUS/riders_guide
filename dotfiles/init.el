@@ -176,7 +176,7 @@
 (use-package denote
   :ensure t
   :custom
-  (denote-directory "~/notes/")
+  (denote-directories '("~/notes/"))
   (denote-known-keywords
    '("janusconnect" "schema" "design" "meeting"
      "emacs" "transportation" "janus" "spare" "python"))
