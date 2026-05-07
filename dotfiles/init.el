@@ -171,6 +171,44 @@
                                                  #'cape-dabbrev)
                                 #'cape-file)))))
 
+;;; Denote — structured note-taking with file-naming conventions
+
+(use-package denote
+  :ensure t
+  :custom
+  (denote-directory "~/notes/")
+  (denote-known-keywords
+   '("janusconnect" "schema" "design" "meeting"
+     "emacs" "transportation" "janus" "spare" "python"))
+  (denote-infer-keywords t)
+  (denote-sort-keywords t)
+  (denote-file-type 'org)           ;; all notes are org files
+  (denote-prompts '(title keywords)) ;; ask for title + keywords; date is automatic
+  :bind (("C-c n n" . denote)
+         ("C-c n o" . denote-open-or-create)
+         ("C-c n i" . denote-link)          ;; insert link to another note
+         ("C-c n b" . denote-backlinks)     ;; show notes that link here
+         ("C-c n r" . denote-rename-file)
+         ("C-c n s" . denote-subdirectory)) ;; create note in a subdirectory
+  :config
+  ;; Org-capture integration: C-c c n → new Denote note
+  (with-eval-after-load 'org-capture
+    (add-to-list 'org-capture-templates
+                 '("n" "Note (Denote)" plain
+                   (file denote-last-path)
+                   #'denote-org-capture
+                   :no-save t
+                   :immediate-finish nil
+                   :kill-buffer t
+                   :jump-to-captured t))))
+
+;; consult-denote: search/open notes using Consult's incremental interface
+(use-package consult-denote
+  :ensure t
+  :after (consult denote)
+  :bind (("C-c n f" . consult-denote-find)   ;; find note by filename
+         ("C-c n g" . consult-denote-grep)))  ;; grep inside notes
+
 ;;; Org Mode
 
 (setq org-agenda-files '("~/org/"))
