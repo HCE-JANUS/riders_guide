@@ -88,6 +88,27 @@
      (eglot-capf (styles orderless basic))))
   (completion-pcm-leading-wildcard t))
 
+;; Prescient: frecency-based sorting (recency + frequency) for Vertico and Corfu.
+;; Orderless handles filtering; Prescient handles sort order only.
+(use-package prescient
+  :ensure t
+  :config
+  (prescient-persist-mode 1)) ;; persist usage stats across sessions
+
+(use-package vertico-prescient
+  :ensure t
+  :after vertico
+  :config
+  (setq vertico-prescient-enable-filtering nil) ;; Orderless filters; Prescient sorts
+  (vertico-prescient-mode 1))
+
+(use-package corfu-prescient
+  :ensure t
+  :after corfu
+  :config
+  (setq corfu-prescient-enable-filtering nil) ;; Orderless filters; Prescient sorts
+  (corfu-prescient-mode 1))
+
 ;; Consult: enhanced search and navigation commands
 (use-package consult
   :ensure t
@@ -129,18 +150,26 @@
   (corfu-auto-prefix 2)   ;; start after 2 characters
   (corfu-cycle t)
   (corfu-quit-no-match t)
+  (corfu-popupinfo-delay '(0.5 . 0.2)) ;; doc popup: 0.5s first show, 0.2s subsequent
   :init
-  (global-corfu-mode))
+  (global-corfu-mode)
+  (corfu-popupinfo-mode 1)) ;; show candidate documentation alongside popup
 
 ;; Cape: extra completion-at-point sources that feed into corfu
 (use-package cape
   :ensure t
   :init
-  ;; Add file path and buffer-word completion inside Python buffers
+  ;; Global fallbacks: file paths and buffer words available everywhere
+  (add-to-list 'completion-at-point-functions #'cape-dabbrev t)
+  (add-to-list 'completion-at-point-functions #'cape-file    t)
+  ;; Python: merge eglot + dabbrev into one unified source so Corfu shows
+  ;; a single ranked list instead of two separate popups
   (add-hook 'python-ts-mode-hook
             (lambda ()
-              (add-to-list 'completion-at-point-functions #'cape-file)
-              (add-to-list 'completion-at-point-functions #'cape-dabbrev t))))
+              (setq-local completion-at-point-functions
+                          (list (cape-capf-super #'eglot-completion-at-point
+                                                 #'cape-dabbrev)
+                                #'cape-file)))))
 
 ;;; Org Mode
 
