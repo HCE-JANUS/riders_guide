@@ -39,6 +39,7 @@ Hamilton County Express provides regional public transportation for all communit
 # section, and a short note on what changed. Newest entry on top. This
 # comment isn't exported; only the list below is.
 #+begin_recentupdates
+- *2026-09-08* — New [[Policy: Multi-Step Rides][Policy: Multi-Step Rides]]: HCE will schedule trips from an origin to a destination and back, but not trips that add a third stop before returning home.
 - *2026-09-08* — Guide redesigned for in-app viewing: new table of contents, readable code/quote formatting, and pages that fit the screen inside the HCE Rides app.
 #+end_recentupdates
 
@@ -198,6 +199,10 @@ Here is an explanation of the Arrive By versus Leave At distinction:
 #+end_warning
 
 In the above scenario, the correct way to create the ride to work, assuming you want to arrive five minutes early, would be to set up the trip to *Arrive By: 8:55 AM.* That means that the bus can drop you /no later than/ 8:55 AM. The Spare Engine will determine your pickup window, which may be earlier than you prefer, but you will get there by 8:55 AM.
+
+#+begin_warning
+*Trips with a third stop before you return home* — for example, home to school, then school to work, then work back home — are constrained on /both/ sides for the middle leg: the pickup can't happen before the previous stop lets out, and the drop-off has to happen before the next commitment starts. HCE cannot guarantee on-time performance for legs like that. See [[Policy: Multi-Step Rides][Policy: Multi-Step Rides]] below.
+#+end_warning
 
 Currently, trips can be scheduled up to one week in advance. There are two ways to schedule rides:
 - *By using the HCE Rides app.* The HCE Rides app is available 24/7. The app will not allow you to schedule a ride for which a driver cannot be immediately matched. It will instead offer the closest available time. See [[Scheduling Trips Using the HCE Rides App][Scheduling Trips Using the HCE Rides App]] for more information on using the HCE Rides app for scheduling.
@@ -642,6 +647,17 @@ HCE's policy is that all personal items left on the bus are turned in to the HCE
 Because of the high demand for service and to ensure that service is generally not detrimentally impacted, HCE is not responsible for the return of lost or items left on the bus to riders after the driver has left the rider’s immediate area.
 Riders can contact the HCE Dispatch Office at (317) 776-3226 during normal business hours to report a lost item and make plans to retrieve their lost property.
 Any items in Lost and Found not claimed after 30 days may be discarded at the discretion of Hamilton County Express.
+
+** Policy: Multi-Step Rides
+HCE customer service will help you schedule trips from an origin to a destination and back to that same origin (for example, home to work and then back home). They will not schedule trips that go to a third location before returning home.
+
+You can create trips like that yourself using the HCE Rides app, but because those trips are constrained on both sides, HCE will not be responsible for those rides not arriving on time or arriving to pick you up too early.
+
+You can call dispatch and attempt to change the destination of your current ride — for example, asking to be dropped at the drug store near your home instead of at home itself — but HCE is not then responsible for the ride from the drug store to your home. You can attempt to schedule that as a new ride through the app or by calling, but your original ride is complete once you're dropped off.
+
+#+begin_warning
+*Example:* You get out of school at 3:00 PM and need to be at work by 3:30 PM. That leg is constrained on both ends — it can't leave school before 3:00 PM, and it must arrive at work by 3:30 PM — leaving no room for the shared-ride pickup windows Hamilton County Express relies on. Trips like this are not guaranteed to run on time.
+#+end_warning
 
 ** Policy: On-Board Vehicle Prohibitions
 The following is prohibited on HCE vehicles:
