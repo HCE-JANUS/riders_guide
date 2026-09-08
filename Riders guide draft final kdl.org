@@ -6,12 +6,8 @@
 #+Title: HCE Riders Guide
 #+Author: HCE Management Team (Kyle Looper - Editor)
 #+Options: num:nil html-style:nil
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fniessen/org-html-themes/styles/readtheorg/css/htmlize.css"/>
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/fniessen/org-html-themes/styles/readtheorg/css/readtheorg.css"/>
-#+HTML_HEAD: <script src="https://cdn.jsdelivr.net/gh/fniessen/org-html-themes/styles/lib/js/jquery.min.js"></script>
-#+HTML_HEAD: <script src="https://cdn.jsdelivr.net/gh/fniessen/org-html-themes/styles/lib/js/bootstrap.min.js"></script>
-#+HTML_HEAD: <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fniessen/org-html-themes/styles/lib/js/jquery.stickytableheaders.min.js"></script>
-#+HTML_HEAD: <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fniessen/org-html-themes/styles/readtheorg/js/readtheorg.js"></script>
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/guide.css"/>
+#+HTML_HEAD: <script type="text/javascript" src="js/guide.js"></script>
 
 #+ATTR_HTML: :width 90px :align right
 [[https://raw.githubusercontent.com/klooper/riders_guide/main/img/HCE.svg]]
@@ -38,6 +34,13 @@
 
 
 Hamilton County Express provides regional public transportation for all communities in Hamilton County, Indiana and is operated by Janus Developmental Services, located at 1555 Westfield Road in Noblesville, Indiana. All members of the public are eligible for transportation support for any purpose within Hamilton County during the days and hours of HCE operation.
+
+# Add a bullet here each time a section below changes: date, a link to the
+# section, and a short note on what changed. Newest entry on top. This
+# comment isn't exported; only the list below is.
+#+begin_recentupdates
+- *2026-09-08* — Guide redesigned for in-app viewing: new table of contents, readable code/quote formatting, and pages that fit the screen inside the HCE Rides app.
+#+end_recentupdates
 
 * Understanding the Hamilton County Express Transportation Service
 Hamilton County Express is an on-demand, curb-to-curb, mobility-accessible transportation service for Hamilton County Indiana.

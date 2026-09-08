@@ -1,0 +1,296 @@
+/*
+ * HCE Riders Guide — self-hosted stylesheet.
+ * Replaces the CDN-hosted readtheorg/htmlize theme + jQuery/Bootstrap. No
+ * external requests, no JS dependency for anything but the ToC panel.
+ * Written for org-mode's default HTML export (ox-html) structure.
+ */
+
+:root {
+  --bg: #ffffff;
+  --bg-alt: #f4f6f9;
+  --fg: #1f2937;
+  --fg-muted: #5b6472;
+  --border: #dde2e8;
+  --accent: #1a5fa8;
+  --accent-dark: #124674;
+  --accent-contrast: #ffffff;
+  --code-bg: #eef1f4;
+  --shadow: rgba(20, 30, 45, 0.14);
+
+  --note-line: #1a5fa8;
+  --note-bg: #eaf2fb;
+  --tip-line: #0f8f6f;
+  --tip-bg: #e7f7f1;
+  --warning-line: #b9781a;
+  --warning-bg: #fbf1e0;
+  --attention-line: #d9611e;
+  --attention-bg: #fdf0e7;
+  --important-line: #c0392b;
+  --important-bg: #fbe9e7;
+  --updates-line: #5b4b9c;
+  --updates-bg: #f0edf9;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14181d;
+    --bg-alt: #1b2129;
+    --fg: #e6e9ed;
+    --fg-muted: #9aa4b2;
+    --border: #2b333d;
+    --accent: #6fa8dc;
+    --accent-dark: #9cc4ea;
+    --accent-contrast: #0b1117;
+    --code-bg: #1e252d;
+    --shadow: rgba(0, 0, 0, 0.4);
+
+    --note-line: #6fa8dc;
+    --note-bg: #182634;
+    --tip-line: #3fbf98;
+    --tip-bg: #122a24;
+    --warning-line: #d9a441;
+    --warning-bg: #2c2413;
+    --attention-line: #e8814a;
+    --attention-bg: #2c1f14;
+    --important-line: #e0685a;
+    --important-bg: #2c1917;
+    --updates-line: #a696e0;
+    --updates-bg: #201c30;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+#content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 18px 48px;
+}
+
+h1.title {
+  font-size: 1.7em;
+  line-height: 1.25;
+  margin: 20px 0 8px;
+  color: var(--accent-dark);
+  text-wrap: balance;
+}
+
+h2, h3, h4, h5, h6 {
+  color: var(--accent-dark);
+  line-height: 1.3;
+  text-wrap: balance;
+  scroll-margin-top: 56px; /* clears the sticky ToC bar when jumped to */
+}
+
+h2 { font-size: 1.35em; margin: 1.6em 0 0.5em; }
+h3 { font-size: 1.15em; margin: 1.4em 0 0.4em; }
+h4 { font-size: 1.05em; margin: 1.2em 0 0.4em; }
+
+p { margin: 0.8em 0; }
+
+a { color: var(--accent); text-decoration-thickness: 1px; }
+a:hover, a:active { color: var(--accent-dark); }
+
+ul.org-ul, ol.org-ol { padding-left: 1.3em; }
+ul.org-ul li, ol.org-ol li { margin: 0.35em 0; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.figure { margin: 1em 0; text-align: center; }
+.figure p { margin: 0; }
+
+hr { border: none; border-top: 1px solid var(--border); margin: 2em 0; }
+
+/* Inline code / verbatim — wraps like normal text instead of running off
+   the screen. (readtheorg's original CSS set white-space:nowrap on an
+   inline element, which can't scroll and just overflows the viewport.) */
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.92em;
+  background: var(--code-bg);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+pre {
+  background: var(--code-bg);
+  padding: 12px 14px;
+  border-radius: 6px;
+  overflow-x: auto;
+  max-width: 100%;
+}
+pre code { background: none; padding: 0; }
+
+/* Tables — display:block lets a wide table scroll horizontally in its own
+   box instead of forcing the whole page wider than the viewport. */
+table {
+  display: block;
+  overflow-x: auto;
+  max-width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.95em;
+}
+caption { caption-side: top; text-align: left; color: var(--fg-muted); font-style: italic; margin-bottom: 4px; }
+th, td {
+  border: 1px solid var(--border);
+  padding: 8px 10px;
+  text-align: left;
+}
+th { background: var(--bg-alt); }
+tbody tr:nth-child(even) { background: var(--bg-alt); }
+
+/* Callout blocks: #+begin_note / tip / warning / attention / important.
+   Label is pure CSS (::before) so it renders even if JS never runs. */
+.note, .tip, .warning, .attention, .important, .recentupdates {
+  margin: 1.2em 0;
+  padding: 12px 14px;
+  border-left: 4px solid;
+  border-radius: 4px;
+}
+.note p:last-child, .tip p:last-child, .warning p:last-child,
+.attention p:last-child, .important p:last-child, .recentupdates p:last-child { margin-bottom: 0; }
+
+.note::before, .tip::before, .warning::before, .attention::before,
+.important::before, .recentupdates::before {
+  display: block;
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.note { border-color: var(--note-line); background: var(--note-bg); }
+.note::before { content: "Note"; color: var(--note-line); }
+
+.tip { border-color: var(--tip-line); background: var(--tip-bg); }
+.tip::before { content: "Tip"; color: var(--tip-line); }
+
+.warning { border-color: var(--warning-line); background: var(--warning-bg); }
+.warning::before { content: "Warning"; color: var(--warning-line); }
+
+.attention { border-color: var(--attention-line); background: var(--attention-bg); }
+.attention::before { content: "Attention"; color: var(--attention-line); }
+
+.important { border-color: var(--important-line); background: var(--important-bg); }
+.important::before { content: "Important"; color: var(--important-line); }
+
+/* "Recent Updates" box at the top of the guide. */
+.recentupdates { border-color: var(--updates-line); background: var(--updates-bg); }
+.recentupdates::before { content: "Recent Updates"; color: var(--updates-line); }
+.recentupdates ul { margin: 0; padding-left: 1.2em; }
+.recentupdates li { margin: 0.5em 0; }
+.recentupdates .update-date {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--updates-line);
+}
+
+/* Table of contents — a full-screen off-canvas panel, opened by a sticky
+   bar at the top of the content. Pure CSS/vanilla-JS toggle, no jQuery. */
+#toc-toggle {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0 -18px;
+  padding: 10px 18px;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  width: calc(100% + 36px);
+  text-align: left;
+  font-size: 0.95em;
+  box-shadow: 0 1px 4px var(--shadow);
+}
+#toc-toggle:after { content: "\2261"; font-size: 1.3em; line-height: 1; }
+
+#table-of-contents {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: var(--bg);
+  overflow-y: auto;
+  padding: 16px 20px 40px;
+  transform: translateX(-100%);
+  transition: transform 0.2s ease;
+}
+body.toc-open #table-of-contents { transform: translateX(0); }
+
+#table-of-contents h2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0;
+  font-size: 1.2em;
+}
+#toc-close {
+  font-size: 0.7em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--fg-muted);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+  background: var(--bg-alt);
+}
+
+#text-table-of-contents ul { list-style: none; padding-left: 1.1em; margin: 0; }
+#text-table-of-contents > ul { padding-left: 0; }
+#text-table-of-contents li { margin: 0.5em 0; }
+#text-table-of-contents a { text-decoration: none; color: var(--fg); }
+#text-table-of-contents a:hover { color: var(--accent); }
+
+/* Footer */
+#postamble {
+  margin-top: 3em;
+  padding-top: 1em;
+  border-top: 1px solid var(--border);
+  color: var(--fg-muted);
+  font-size: 0.85em;
+}
+#postamble p { margin: 0.2em 0; }
+#postamble .validation { display: none; }
+
+@media (min-width: 820px) {
+  body { font-size: 18px; }
+  #toc-toggle { display: none; }
+  #table-of-contents {
+    position: static;
+    transform: none;
+    inset: auto;
+    z-index: auto;
+    padding: 0 0 24px;
+    background: transparent;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 24px;
+  }
+  #toc-close { display: none; }
+}
