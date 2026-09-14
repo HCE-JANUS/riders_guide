@@ -81,22 +81,26 @@ Hamilton County Express operates on the following schedule:
 - *Holidays with no operation:* HCE is always closed on the following holidays: New Years Day (January 1), Independence Day (July 4), Memorial Day (variable), Labor Day (variable), Thanksgiving (variable), and Christmas Day (December 25). These holidays are sometimes extended to two or three days, as shown in the table below. 
 
   
-  Holiday Schedule for 2026: 
+  Holiday Schedule for 2026-2027:
   | Holiday          | Day      | Date       | Service Level |
   |------------------+----------+------------+---------------|
-  | New Years        | Thursday | 1/1/2026   | /No Service/  |
-  | New Years        | Friday   | 1/2/2026   | /No Service/  |
-  | New Years        | Saturday | 1/3/2026   | /No Service/  |
-  | Memorial Day     | Monday   | 5/25/2026  | /No Service/  |
-  | Independence Day | Friday   | 7/3/2026   | /No Service/  |
-  | Independence Day | Saturday | 7/4/2026   | /No Service/  |
-  | Labor Day        | Monday   | 9/7/2026   | /No Service/  |
   | Thanksgiving     | Thursday | 11/26/2026 | /No Service/  |
   | Thanksgiving     | Friday   | 11/27/2026 | /No Service/  |
   | Thanksgiving     | Saturday | 11/28/2026 | /No Service/  |
   | Christmas Eve    | Thursday | 12/24/2026 | /No Service/  |
   | Christmas Day    | Friday   | 12/25/2026 | /No Service/  |
   | Christmas        | Saturday | 12/26/2026 | /No Service/  |
+  | New Years        | Thursday | 12/31/2026 | /No Service/  |
+  | New Years        | Friday   | 1/1/2027   | /No Service/  |
+  | New Years        | Saturday | 1/2/2027   | /No Service/  |
+  | Memorial Day     | Monday   | 5/31/2027  | /No Service/  |
+  | Independence Day | Monday   | 7/5/2027   | /No Service/  |
+  | Labor Day        | Monday   | 9/6/2027   | /No Service/  |
+  | Thanksgiving     | Thursday | 11/25/2027 | /No Service/  |
+  | Thanksgiving     | Friday   | 11/26/2027 | /No Service/  |
+  | Thanksgiving     | Saturday | 11/27/2027 | /No Service/  |
+  | Christmas Eve    | Friday   | 12/24/2027 | /No Service/  |
+  | Christmas Day    | Saturday | 12/25/2027 | /No Service/  |
 
      
 ** Hamilton County Express Service Area
