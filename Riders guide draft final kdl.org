@@ -39,6 +39,7 @@ Hamilton County Express provides regional public transportation for all communit
 # section, and a short note on what changed. Newest entry on top. This
 # comment isn't exported; only the list below is.
 #+begin_recentupdates
+- *2026-09-14* — [[Hours of Operation and Holidays][Hours of Operation and Holidays]] updated with the 2027 holiday service schedule.
 - *2026-09-14* — New [[Hamilton County Express Service Area][Hamilton County Express Service Area]] connection point: One-Call Connect, a CIRTA-administered pilot service linking Hamilton and Hancock counties.
 - *2026-09-08* — New [[Policy: Multi-Step Rides][Policy: Multi-Step Rides]]: HCE will schedule trips from an origin to a destination and back, but not trips that add a third stop before returning home.
 - *2026-09-08* — Guide redesigned for in-app viewing: new table of contents, readable code/quote formatting, and pages that fit the screen inside the HCE Rides app.
