@@ -126,6 +126,10 @@ Currently HCE provides service connections to the following surrounding counties
   + *Zionsville Presbyterian Church* 4775 West 116th Street, Zionsville, IN 46077
 - *Madison Co.* - Transportation for Rural Areas of Madison Co. (TRAM) ([[https://www.cirta.us/county-connect/transportation-resources/tram/][TRAM web site]]). +1 (855) 743-3843. HCE provides service connections to and from the following (TRAM) connecting location in Pendleton:
   + *Loves Travel Stop* 9000 Interpark Dr., Pendleton, IN 46064
+- *Hancock County* - One-Call Connect ([[one-call-connect.html][One-Call Connect web site]]), a pilot service administered by CIRTA, coordinating trips between an address in Hamilton County and an address in Hancock County. HCE and RIDE Hancock vehicles transfer riders at:
+  + *Leo's Market and Eatery* 8956 N 600 W, McCordsville, IN 46055
+
+  Cost is $8.00 per trip (covers both legs, one-way; round trip is $16). All bookings, cancellations, and trip changes must go through CIRTA directly at +1 (317) 327-7433 — HCE dispatch cannot make these changes.
 
 * Setting Up an HCE Rider Account
 Before you can schedule rides on the Hamilton County Express (HCE) service, you have to call in to the reservations line — +1 (317) 773-2688 — to get set up on the HCE system. The following information is required to set up an account, so be prepared to provide it:
