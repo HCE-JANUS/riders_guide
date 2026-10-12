@@ -39,6 +39,7 @@ Hamilton County Express provides regional public transportation for all communit
 # section, and a short note on what changed. Newest entry on top. This
 # comment isn't exported; only the list below is.
 #+begin_recentupdates
+- *2026-10-12* — [[Disclosure: Transportation Advisory Committee][Transportation Advisory Committee]] meeting date changed: the September 25th meeting moved to Thursday, October 15th.
 - *2026-09-14* — [[Hours of Operation and Holidays][Hours of Operation and Holidays]] updated with the 2027 holiday service schedule.
 - *2026-09-14* — New [[Hamilton County Express Service Area][Hamilton County Express Service Area]] connection point: One-Call Connect, a CIRTA-administered pilot service linking Hamilton and Hancock counties.
 - *2026-09-08* — New [[Policy: Multi-Step Rides][Policy: Multi-Step Rides]]: HCE will schedule trips from an origin to a destination and back, but not trips that add a third stop before returning home.
@@ -765,7 +766,7 @@ The purpose of the Transportation Advisory Committee is to provide HCE with reco
 |----------+----------------+------------+----------|
 | Thursday | April 2nd      | 9:00 AM    | 10:30 AM |
 | Thursday | June 15th      | 9:00 AM    | 10:30 AM |
-| Thursday | September 25th | 9:00 AM    | 10:30 AM |
+| Thursday | October 15th   | 9:00 AM    | 10:30 AM |
 | Thursday | December 17th  | 9:00 AM    | 10:30 AM |
   
 ** Disclosure: Alternative Formats for Riders Guide
